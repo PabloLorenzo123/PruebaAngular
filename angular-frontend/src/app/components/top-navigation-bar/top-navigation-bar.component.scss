@@ -1,65 +1,86 @@
 .top-navigation-bar {
     width: 100%;
-    height: 30%;
-    padding: 5px;
+    min-height: 20%;
     position: fixed;
-    
+    background-color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
 
-    .first-row {
-        display: flex;
-        justify-content: space-between;
+.first-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-        #company-logo {
-            min-width: 80px;
-        }
+    font-size: 1.8rem;
+    margin-top: -50px;
+    gap: 10px;
 
+    text-align: center;
 
-        .profile-container{
-            position: relative; // Makes the children element be position relatived to this element.
-            width: 200px; /* Set width */
-            height: 200px; /* Set height equal to width */
+    .profile-container{
+        position: relative; // Makes the children element be position relatived to this element.
+        width: 180px; /* Set width */
+        height: 180px; /* Set height equal to width */
+        border-radius: 50%;
+        overflow: hidden;
+
+        // All the children elements need to be round and full height and width, also absolutely positioned and centered.
+        .colored-ring,
+        .white-ring,
+        .profile-img {
+            width: 100%;
+            height: 100%;
             border-radius: 50%;
-            overflow: hidden;
-
-            // All the children elements need to be round and full height and width, also absolutely positioned and centered.
-            .colored-ring,
-            .white-ring,
-            .profile-img {
-                width: 100%;
-                height: 100%;
-                border-radius: 50%;
-                position: absolute;
-                top: 50%; /* Move it down by 50% of the container's height */
-                left: 50%; /* Move it right by 50% of the container's width */
-                transform: translate(-50%, -50%); /* Move it back by 50% of its own width and height */
-            }
-
-            // The colored ring (red -> blue) sits beneath the other elements.
-            .colored-ring {
-                z-index: 1;
-                background: linear-gradient(to right, blue, red); /* Creates the gradient */
-                clip-path: polygon(0% 0%, 50% 0%, 50% 50%, 0% 50%); /* Cuts the top-left quarter */
-            }
-
-            // The white ring comes second.
-            .white-ring {
-                z-index: 2;
-                clip-path: polygon(0% 50%, 50% 50%, 50% 0%, 100% 0%, 100% 100%, 0% 100%); // Cut 1/4 of the element.
-                background-color: #f5f9fc;
-            }
-            
-            // The image comes last, the separation between the ring and the photo is determined by the photo border width.
-            .profile-img {
-                z-index: 3;
-                width: 90%;
-                height: 90%;
-                border: 20px solid white;
-                border-radius: 50%; /* Ensures the image is circular */
-                object-fit: cover; /* Cover the entire container */       
-            }
-    
-               
+            position: absolute;
+            top: 50%; /* Move it down by 50% of the container's height */
+            left: 50%; /* Move it right by 50% of the container's width */
+            transform: translate(-50%, -50%); /* Move it back by 50% of its own width and height */
         }
+
+        // The colored ring (red -> blue) sits beneath the other elements.
+        .colored-ring {
+            z-index: 1;
+            background: linear-gradient(70deg, blue, red); /* Creates the gradient */
+            clip-path: polygon(0% 0%, 50% 0%, 50% 50%, 0% 50%); /* Cuts the top-left quarter */
+        }
+
+        // The white ring comes second.
+        .white-ring {
+            z-index: 2;
+            clip-path: polygon(0% 50%, 50% 50%, 50% 0%, 100% 0%, 100% 100%, 0% 100%); // Cut 1/4 of the element.
+            background-color: #f5f9fc;
+        }
+
+        // The image comes last, the separation between the ring and the photo is determined by the photo border width.
+        .profile-img {
+            z-index: 3;
+            width: 90%;
+            height: 90%;
+            border: 15px solid white;
+            border-radius: 50%; /* Ensures the image is circular */
+            object-fit: cover; /* Cover the entire container */       
+        }
+    }
+}
+
+.tabs-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0px;
+    padding-inline: 20px;
+
+    .tabs {
+        opacity: 0.7;
+        display: flex;
+        gap: 5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .tabs {
+        width: 100%;
+        justify-content: space-between;
+        gap: 0;
     }
 }

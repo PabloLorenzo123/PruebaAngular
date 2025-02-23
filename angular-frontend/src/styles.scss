@@ -5,10 +5,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Roboto", serif;
 }
 
 html, body {
   height: 100%;
+}
+
+body {
+    background-color: #f5f9fc;
 }
 
 $primary-color: #fff;

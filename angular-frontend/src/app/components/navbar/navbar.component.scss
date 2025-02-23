@@ -1,0 +1,38 @@
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    .navbar-logo {
+        max-width: 80px;
+        max-height: 80px;
+    }
+
+    ul {
+        list-style: none;
+        display: flex;
+    }
+
+    li {
+        height: 50px;
+    }
+    a {
+        height: 100%;
+        padding: 0 30px;
+        display: flex;
+        text-decoration: none;
+        align-items: center;
+        color: black;
+        padding: 1em 2em;
+        transition: background-color 150ms ease;
+    }
+    
+
+    a:hover {
+        background-color: #f5f9fc;
+        cursor: pointer;
+    }
+
+    .active-link {
+        border-bottom: 2px solid black;
+    }
+}
