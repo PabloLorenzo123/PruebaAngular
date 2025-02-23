@@ -3,6 +3,10 @@ import { CoveragesService } from '../../services/coverages.service';
 import { Coverage } from '../../model/coverage.type';
 import { catchError } from 'rxjs';
 
+interface CoverageItem extends Coverage {
+  available: boolean;
+}
+
 @Component({
   selector: 'coverages',
   imports: [],
@@ -11,10 +15,21 @@ import { catchError } from 'rxjs';
 })
 export class CoveragesComponent implements OnInit {
   coveragesService = inject(CoveragesService);
-  coverages = signal<Array<Coverage>>([]);
+  coverages = signal<Array<CoverageItem>>([]);
+
+  async checkCoverage(productName: string) {
+    try {
+      await this.coveragesService.checkCoverage('Pablo', productName);
+      this.coverages.update(prev => prev.map(c => c.name == productName? {...c, available: true}: c));
+    } catch {}
+  }
 
   ngOnInit(): void {
-      this.coverages.set(this.coveragesService.getCoverages());
+      this.coverages.set(this.coveragesService.getCoverages().map(c => ({
+        ...c,
+        available: false // Initially false, this will be determined by checkCoverage().
+      })));
+
       // this.coveragesService.getCoverages()
       //   .pipe(
       //     catchError((err) => {

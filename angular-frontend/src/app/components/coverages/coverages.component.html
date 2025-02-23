@@ -3,10 +3,19 @@
 
 <div class="coverages">
     @for (coverage of coverages(); track $index) {
-        <div class="coverage">
-            <h1>{{ coverage.name }}</h1>
-            <span class="status"></span>
+        <div class="coverage-container" (click)="checkCoverage(coverage.name)">
+            {{ coverage.available? 'true': 'false' }}
+            <div class="coverage">
+                <div class="coverage__detail">
+                    <h1>{{ coverage.name }}</h1>
+                    <span class="status"></span>
+                </div>
+            </div>
+            <div class="black-bar">
+                
+            </div>
         </div>
+        
         
     }
 </div>
