@@ -1,0 +1,12 @@
+
+<h1 class="fw-light">Mis coberturas</h1>
+
+<div class="coverages">
+    @for (coverage of coverages(); track $index) {
+        <div class="coverage">
+            <h1>{{ coverage.name }}</h1>
+            <span class="status"></span>
+        </div>
+        
+    }
+</div>

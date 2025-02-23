@@ -1,0 +1,29 @@
+
+.coverages {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.coverage {
+    width: 85%;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.7rem;
+    font-weight: normal;
+    cursor: pointer;
+
+    .status {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: green;
+    }
+}
