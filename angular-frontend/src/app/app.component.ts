@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { TopNavigationBarComponent } from './components/top-navigation-bar/top-navigation-bar.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, TopNavigationBarComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

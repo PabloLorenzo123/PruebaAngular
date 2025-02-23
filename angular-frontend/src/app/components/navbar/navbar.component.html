@@ -1,9 +1,6 @@
 <nav class="navbar">
     <div class="container">
-        <!-- Company Logo -->
-        <img class="navbar-logo" src="universal-logo.png" alt="Grupo Universal Logo" />
-
-        <div class="side-bar {{ isMenuOpen ? 'active .open-navbar-animation' : '' }}">
+        <div class="side-bar {{ isMenuOpen ? 'active open-navbar' : '' }}">
             <!-- Navbar Toggler -->
             <button class="navbar-toggler {{ isMenuOpen ? 'active' : '' }}" (click)="toggleMenu()">
                 <img class="navbar-toggler__icon"

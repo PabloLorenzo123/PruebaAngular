@@ -1,11 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+$primary-color: #fff;
+$secondary-color: #f5f9fc;
+$tertiary-color: #0b2362;
+
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto", serif;
+  font-family: "Roboto";
+  color: $tertiary-color;
+}
+
+a {
+  color: $tertiary-color;
 }
 
 html, body {
@@ -16,5 +25,3 @@ body {
     background-color: #f5f9fc;
 }
 
-$primary-color: #fff;
-$secondary-color: #f5f9fc;

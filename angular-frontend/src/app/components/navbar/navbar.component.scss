@@ -1,17 +1,23 @@
+.navbar {
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    padding: 0.5rem;
+}
 
 .container{
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    display: relative;
+    justify-content: flex-end;
+    width: 100%;
 
-    .navbar-logo {
-        max-width: 80px;
-        max-height: 80px;
+    .side-bar {
+        display: flex;
     }
+
     .navbar-menu{
         list-style: none;
-        
 
         li {
             height: 50px;
@@ -25,8 +31,7 @@
             padding: 1em 2em;
             transition: background-color 150ms ease;
         }
-        
-    
+
         a:hover {
             background-color: #f5f9fc;
             cursor: pointer;
@@ -42,16 +47,12 @@
 // The navbar menu is hidden on mobile.
 @media (max-width: 950px){
     .side-bar {
-        display: flex;
         flex-direction: column;
-        position: absolute;
-        background-color: white;
-        right: 0;
-        z-index: 999;
-        padding: 0.5rem;
+        overflow: hidden;
     }
 
     .side-bar.active {
+        background-color: white;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     }
 
@@ -59,31 +60,22 @@
         display: none;
         flex-direction: column;
         justify-content: space-around;
-        background-color: white;
-        overflow: hidden;
-
         li {
             border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-            padding: 0;
-            
+            border-top: 1px solid rgba(0, 0, 0, 0.2)
         }
     }
 
     .navbar-menu.active {
         display: flex; /* Show when toggled */
     }
-    
 
     .navbar-toggler {
         display: flex;
         background: none;
         border: none;
         cursor: pointer;
-
-        padding: 0;
         transform: scaleX(-1);
-        cursor: pointer;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 
         &__icon {
             width: 45px;
@@ -97,21 +89,28 @@
     .navbar-toggler {
         display: none;
     }
+
+    .side-bar {
+        flex-direction: row;
+
+        .navbar-menu {
+            display: flex;
+        }
+    }
 }
 
-.open-navbar-animation {
-    animation-duration: 5s;
-    animation-name: toggle-navbar-open;
-    animation-timing-function: ease-in-out;
-    animation-play-state: running;
+/* Keyframes for slide-in animation */
+.open-navbar {
+    animation: open-navbar 0.3s ease forwards;
 }
 
-// Animations
-@keyframes toggle-navbar-open {
+@keyframes open-navbar {
     from {
-        height: 0;
+        opacity: 0;
+        transform: translateX(100%);
     }
     to {
-        height: 200px;
+        opacity: 1;
+        transform: translateX(0);
     }
 }
