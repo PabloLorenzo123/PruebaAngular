@@ -1,38 +1,117 @@
 
-.navbar{
+.container{
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
+    display: relative;
+
     .navbar-logo {
         max-width: 80px;
         max-height: 80px;
     }
-
-    ul {
+    .navbar-menu{
         list-style: none;
+        
+
+        li {
+            height: 50px;
+        }
+        
+        a {
+            height: 100%;
+            display: flex;
+            text-decoration: none;
+            color: black;
+            padding: 1em 2em;
+            transition: background-color 150ms ease;
+        }
+        
+    
+        a:hover {
+            background-color: #f5f9fc;
+            cursor: pointer;
+        }
+    
+        .active-link {
+            border-bottom: 2px solid black;
+        }
+    }
+    
+}
+
+// The navbar menu is hidden on mobile.
+@media (max-width: 950px){
+    .side-bar {
         display: flex;
+        flex-direction: column;
+        position: absolute;
+        background-color: white;
+        right: 0;
+        z-index: 999;
+        padding: 0.5rem;
     }
 
-    li {
-        height: 50px;
+    .side-bar.active {
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     }
-    a {
-        height: 100%;
-        padding: 0 30px;
-        display: flex;
-        text-decoration: none;
-        align-items: center;
-        color: black;
-        padding: 1em 2em;
-        transition: background-color 150ms ease;
+
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        justify-content: space-around;
+        background-color: white;
+        overflow: hidden;
+
+        li {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+            padding: 0;
+            
+        }
+    }
+
+    .navbar-menu.active {
+        display: flex; /* Show when toggled */
     }
     
 
-    a:hover {
-        background-color: #f5f9fc;
+    .navbar-toggler {
+        display: flex;
+        background: none;
+        border: none;
         cursor: pointer;
-    }
 
-    .active-link {
-        border-bottom: 2px solid black;
+        padding: 0;
+        transform: scaleX(-1);
+        cursor: pointer;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+        &__icon {
+            width: 45px;
+            height: 45px;
+        }
+    }
+}
+
+// Hide the navbar toggler on desktop.
+@media (min-width: 950px){
+    .navbar-toggler {
+        display: none;
+    }
+}
+
+.open-navbar-animation {
+    animation-duration: 5s;
+    animation-name: toggle-navbar-open;
+    animation-timing-function: ease-in-out;
+    animation-play-state: running;
+}
+
+// Animations
+@keyframes toggle-navbar-open {
+    from {
+        height: 0;
+    }
+    to {
+        height: 200px;
     }
 }

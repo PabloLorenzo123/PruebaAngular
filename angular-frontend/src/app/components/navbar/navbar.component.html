@@ -1,8 +1,21 @@
 <nav class="navbar">
-    <img class="navbar-logo" src="universal-logo.png"  alt="Grupo Universal Logo"/>
-    <ul>
-        <li><a>Primer Link</a></li>
-        <li><a>Segundo Link</a></li>
-        <li><a>Tercer Link</a></li>
-    </ul>
+    <div class="container">
+        <!-- Company Logo -->
+        <img class="navbar-logo" src="universal-logo.png" alt="Grupo Universal Logo" />
+
+        <div class="side-bar {{ isMenuOpen ? 'active .open-navbar-animation' : '' }}">
+            <!-- Navbar Toggler -->
+            <button class="navbar-toggler {{ isMenuOpen ? 'active' : '' }}" (click)="toggleMenu()">
+                <img class="navbar-toggler__icon"
+                    [src]="isMenuOpen ? 'navbar-toggle-close.svg' : 'navbar-toggle.svg'" />
+            </button>
+
+            <!-- Navbar Items -->
+            <ul class="navbar-menu {{ isMenuOpen ? 'active' : '' }}">
+                <li><a href="#">Primer Link</a></li>
+                <li><a href="#">Segundo Link</a></li>
+                <li><a href="#">Tercer Link</a></li>
+            </ul>
+        </div>
+    </div>
 </nav>
