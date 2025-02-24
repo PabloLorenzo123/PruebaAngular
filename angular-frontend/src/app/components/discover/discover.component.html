@@ -1,0 +1,28 @@
+
+<section class="discover-section">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="m-0">Descubre</h1>
+        <!-- Display icons -->
+        <div class="display-icons">
+            @for (option of displayOptions; track option.className){
+                <img 
+                    [src]="option.svgSrc"
+                    [class]="option.className"
+                    (click)="selectDisplayOption(option.className)"
+                    [class.selected]="selectedDisplayOption() == option.className"
+                />
+            }
+        </div>
+    </div>
+    
+
+    <div class="discover-articles-container">
+        @for (article of articles(); track article.id){
+            <div class="discover-article shadow-sm">
+                <p>{{article.title}}</p>
+                <a [href]="article.url" target="_blank" class="text-decoration-none">Ver más</a>
+            </div>
+        }
+    </div>
+
+</section>

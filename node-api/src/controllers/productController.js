@@ -5,6 +5,12 @@
 const Product = require("../models/Product");
 const User = require("../models/User");
 
+
+/**
+ * @route POST /product
+ * @description Recibe un producto con su desarrollador
+ * @access Público
+ */
 const createProduct = async (req, res) => {
   try {
     const { productName, developerName } = req.body;
@@ -31,6 +37,24 @@ const createProduct = async (req, res) => {
   }
 };
 
+const getAllProducts = async (req, res) => {
+  const products = [
+    {
+      id: 1,
+      name: 'Para tu mejor amigo'
+    },
+    {
+      id: 2,
+      name: 'Por si te enfermas',
+    },
+    {
+      id: 3,
+      name: 'Para tu bici'
+    }
+  ]
+  return res.status(200).json(products);
+}
+
 const getProducts = async (req, res) => {
   try {
     // User's products
@@ -50,4 +74,5 @@ const getProducts = async (req, res) => {
 module.exports = {
   createProduct,
   getProducts,
+  getAllProducts,
 };

@@ -1,0 +1,19 @@
+
+
+<div class="product-container shadow-sm" [class.disabled]="className() == 'failure'" (click)="sendPostRequest()">
+    <!-- This div is for styling purposes -->
+     
+     <div class="product-container__right-border">
+     </div>
+     
+    <!-- This shows the product details -->
+    <div class="product-container__content d-flex align-items-center">
+        <div class="product__detail w-100 d-flex justify-content-between align-items-center">
+            <p>{{ productData().name }}</p>
+            <span class="status" [ngClass]="className()"></span>
+        </div>
+    </div>
+
+
+</div>
+

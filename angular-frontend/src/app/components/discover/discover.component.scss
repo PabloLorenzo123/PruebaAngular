@@ -1,0 +1,53 @@
+@import '../../../styles.scss';
+
+.discover-articles-container {
+    display: flex !important;
+    width: 100%;
+    gap: 2rem; /* Space between children */
+    flex-wrap: wrap; /* Optional: Wrap children to the next line if they don't fit */
+}
+
+.discover-article {
+    min-width: 150px; /* Minimum width for each child */
+    min-height: 170px; /* Minimum height for each child */
+    flex-grow: 1; /* Grow to fill available space */
+    flex-basis: 0; /* Distribute space equally (optional) */
+    
+    background-color: white;
+
+
+    border: 1px solid $secondary-color;
+
+    border-radius: 10px;
+    padding: 1em;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  
+}
+
+.display-icons {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    .more {
+        width: 30px;
+    }
+    .grid, 
+    .circle {
+        width: 20px;
+    }
+
+    .more.selected,
+    .grid.selected,
+    .circle.selected {
+        fill: red;
+        color: $tertiary-color;
+    }
+
+    img:hover {
+        cursor: pointer;
+    }
+}

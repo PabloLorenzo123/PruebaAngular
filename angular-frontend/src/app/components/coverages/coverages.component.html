@@ -1,19 +1,10 @@
 
 <section class="coverages-section">
-    <h1 class="fw-light coverages-section__header">Mis Coberturas</h1>
+    <h1>Mis Coberturas</h1>
 
-    <div class="coverages">
-        @for (coverage of coverages(); track coverage.id) {
-
-            <div class="coverage-container {{ coverage.available? '': 'disabled'}} shadow-sm" (click)="checkCoverage(coverage.name)">            
-                <div class="coverage d-flex align-items-center">
-                    <div class="coverage__detail w-100 d-flex justify-content-between align-items-center">
-                        <p>{{ coverage.name }}</p>
-                        <span class="status"></span>
-                    </div>
-                </div>
-            </div>     
-        }
-    </div>
+    @for (coverage of coverages(); track coverage.id) {
+        <product [productData]="coverage"/>
+    }
+    
 </section>
 
