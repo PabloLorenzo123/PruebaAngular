@@ -19,25 +19,23 @@ export class CoveragesComponent implements OnInit {
 
   async checkCoverage(productName: string) {
     const successful = await this.coveragesService.checkCoverage('Pablo', productName);
-    
-    this.coverages.update(prev => prev.map(c => c.name == productName? {...c, available: successful}: c));
   }
 
   ngOnInit(): void {
-      this.coverages.set(this.coveragesService.getCoverages().map(c => ({
-        ...c,
-        available: false // Initially false, this will be determined by checkCoverage().
-      })));
+      // this.coverages.set(this.coveragesService.getCoverages().map(c => ({
+      //   ...c,
+      //   available: false // Initially false, this will be determined by checkCoverage().
+      // })));
 
-      // this.coveragesService.getCoverages()
-      //   .pipe(
-      //     catchError((err) => {
-      //       console.log(err);
-      //       throw err;
-      //     })
-      //   ).subscribe(c => {
-      //     this.coverages.set(c)
-      //   })
+      this.coveragesService.getCoverages()
+        .pipe(
+          catchError((err) => {
+            console.log(err);
+            throw err;
+          })
+        ).subscribe(allCoverages => {
+          this.coverages.set(allCoverages.map(c => ({...c, available: false})))
+        })
   }
 
 

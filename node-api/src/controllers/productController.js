@@ -16,14 +16,14 @@ const createProduct = async (req, res) => {
     }
 
     // Create product
-    const product = await Product.create({
-      name: productName,
-      userId: req.user?.userId,
-    });
+    // const product = await Product.create({
+    //   name: productName,
+    //   userId: req.user?.userId,
+    // });
 
     res.status(201).json({
       message: "Producto recibido correctamente",
-      data: product,
+      data: {productName, developerName},
     });
   } catch (err) {
     console.error(err);

@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 
+import { Coverage } from '../model/coverage.type';
 import { Observable, map, catchError, throwError, of } from 'rxjs';
+import { HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
@@ -11,37 +13,37 @@ export class CoveragesService {
 
   private http = inject(HttpClient); // Correct field injection in Angular 16+
 
-  async checkCoverage(developer: string, productName: string) {
-    try {
-        const res = await fetch(this.apiUrl, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            developer,
-            productName
-          })
-        })
+  async checkCoverage(developerName: string, productName: string) {
+    const headers = new HttpHeaders({
+      "Content-Type": "application/json"
+    })
 
-        return res.ok ? true: false;
-    } catch (error){
-      console.log(error);
-      return false;
-    }
-    
-    // return this.http.post(this.apiUrl, { developer, productName }).pipe(
-    //   map(() => true), // If the request succeeds, return true
-    //   catchError(() => of(false)) // If an error occurs, return false
-    // );
+    return this.http
+      .post(this.apiUrl,
+        { productName, developerName},
+       
+      )
+      .pipe(
+        map((res) => res), // Send the res to the suscriber if there's no error.
+        catchError(() => of(false))
+      )
+      .subscribe((res: any) => {
+        if (res) {
+          if (res.status == 201) {
+            console.log(res.message);
+            return true;
+          }
+        }
+        return false; // If recieved a falsy value, then return false.
+      });
   }
 
   getCoverages() {
-    return [
-      {id: 1, name: 'Para tu amigo', available: false},
-      {id: 2, name: 'Para tu salud', available: false},
-      {id: 3, name: 'Para tu bici', available: false},
-    ]
-    // return this.http.get<Array<Coverage>>(this.apiUrl); // Fixed variable reference
+    // return [
+    //   {id: 1, name: 'Para tu amigo', available: false},
+    //   {id: 2, name: 'Para tu salud', available: false},
+    //   {id: 3, name: 'Para tu bici', available: false},
+    // ]
+    return this.http.get<Array<Coverage>>(this.apiUrl); // Fixed variable reference
   }
 }
