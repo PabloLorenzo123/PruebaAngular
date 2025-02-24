@@ -4,7 +4,7 @@ import { Coverage } from '../../model/coverage.type';
 import { catchError } from 'rxjs';
 
 interface CoverageItem extends Coverage {
-  available: boolean;
+  available: boolean | undefined;
 }
 
 @Component({
@@ -18,7 +18,14 @@ export class CoveragesComponent implements OnInit {
   coverages = signal<Array<CoverageItem>>([]);
 
   async checkCoverage(productName: string) {
-    const successful = await this.coveragesService.checkCoverage('Pablo', productName);
+    const successful: boolean = await this.coveragesService.checkCoverage('Pablo', productName);
+    console.log(`succesful = ${successful}`)
+    if (successful){
+      // Update the coverage available property.
+      this.coverages.update(prev => prev.map(c => 
+        c.name === productName ? { ...c, available: successful } : c
+      ));
+    }
   }
 
   ngOnInit(): void {
@@ -34,7 +41,7 @@ export class CoveragesComponent implements OnInit {
             throw err;
           })
         ).subscribe(allCoverages => {
-          this.coverages.set(allCoverages.map(c => ({...c, available: false})))
+          this.coverages.set(allCoverages.map(c => ({...c, available: undefined})))
         })
   }
 
