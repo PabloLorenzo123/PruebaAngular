@@ -18,10 +18,9 @@ export class CoveragesComponent implements OnInit {
   coverages = signal<Array<CoverageItem>>([]);
 
   async checkCoverage(productName: string) {
-    try {
-      await this.coveragesService.checkCoverage('Pablo', productName);
-      this.coverages.update(prev => prev.map(c => c.name == productName? {...c, available: true}: c));
-    } catch {}
+    const successful = await this.coveragesService.checkCoverage('Pablo', productName);
+    
+    this.coverages.update(prev => prev.map(c => c.name == productName? {...c, available: successful}: c));
   }
 
   ngOnInit(): void {
