@@ -1,7 +1,7 @@
 <nav class="side-navbar">
   <!-- Navbar Toggler -->
   <button class="navbar-toggler" (click)="toggleMenu()">
-    <img class="navbar-toggler__icon" src="navbar-toggle.svg" />
+    <mat-icon svgIcon="navbar-icon"></mat-icon>
   </button>
 </nav>
 
@@ -18,8 +18,10 @@
   </div>
 
   <ul class="navbar-menu">
-    <li><a href="#">Primer Link</a></li>
-    <li><a href="#">Segundo Link</a></li>
-    <li><a href="#">Tercer Link</a></li>
+    <li>
+      <a (click)="handleLogout()">
+        Cerrar Sesión
+      </a>
+    </li>
   </ul>
 </div>
