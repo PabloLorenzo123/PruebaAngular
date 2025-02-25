@@ -1,6 +1,11 @@
 @import '../../../styles.scss'; // Import global styles.
 
+.product-container:hover {
+    scale: 1.025;
+}
 .product-container {
+    transition: scale 0.2s ease;
+    
     position: relative; // This allow children element to be positioned relative to this element.
     width: 100%;
     height: 80px;
