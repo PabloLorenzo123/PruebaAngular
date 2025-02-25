@@ -4,14 +4,13 @@
         <h1 class="m-0">Descubre</h1>
         <!-- Display icons -->
         <div class="display-icons">
-            @for (option of displayOptions; track option.className){
-                <img 
-                    [src]="option.svgSrc"
-                    [class]="option.className"
-                    (click)="selectDisplayOption(option.className)"
-                    [class.selected]="selectedDisplayOption() == option.className"
-                />
+            @for (option of getOptionsNames(); track option){
+                <mat-icon [svgIcon]="option" 
+                    [class.selected]="selectedDisplayOption() == option"
+                    (click)="selectDisplayOption(option)">
+                </mat-icon>
             }
+            
             
 
         </div>
