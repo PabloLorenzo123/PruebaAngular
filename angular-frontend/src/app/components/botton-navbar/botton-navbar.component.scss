@@ -1,0 +1,11 @@
+@import "../../../styles.scss";
+
+.bottom-navbar {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: 50px;
+    background-color: #eff6fe;
+
+    .nav-items-container {}
+}

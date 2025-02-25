@@ -1,9 +1,12 @@
+@import "../../../styles.scss";
+
 .user-info {
     min-height: 30%;
 }
 
 .content {
     padding: 40px 20px;
+    padding-bottom: $bottom-navbar-height;
     margin: auto;
     max-width: 750px;
     // border: 1px solid black;

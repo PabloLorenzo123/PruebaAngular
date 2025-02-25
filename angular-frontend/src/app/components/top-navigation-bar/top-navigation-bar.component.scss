@@ -18,8 +18,8 @@
     position: relative;
     top: 10px;
     left: 5px;
-    width: 50px;
-    height: 50px;
+    width: $fixed-top-icons-width;
+    height: $fixed-top-icons-width;
 }
 
 .first-row {
@@ -97,6 +97,7 @@
         opacity: 0.7;
         display: flex;
         gap: 5rem;
+        cursor: pointer;
     }
 }
 
