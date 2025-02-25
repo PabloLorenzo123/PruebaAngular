@@ -8,6 +8,8 @@ import { NgClass } from '@angular/common';
 
 import { Coverage } from '../../model/coverage.type';
 
+import { ToastrService } from 'ngx-toastr';
+
 @Component({
   selector: 'product',
   imports: [NgClass],
@@ -15,8 +17,6 @@ import { Coverage } from '../../model/coverage.type';
   styleUrl: './product.component.scss'
 })
 export class ProductComponent {
-  coveragesService = inject(CoveragesService);
-
   productData = input.required<Coverage>();
   postRequestStatus = signal('');
 
@@ -32,6 +32,8 @@ export class ProductComponent {
     }
   })
 
+  constructor(private coveragesService: CoveragesService, private toastr: ToastrService) {}
+
   sendPostRequest(){
     // Makes an api call to the api to create a product. if the request is succesful update
     // the productRequestStatus property according to the request response.
@@ -41,14 +43,14 @@ export class ProductComponent {
         // map(() => true),
         catchError((err) => {
           console.log(err);
-          alert(err?.error.message ? err.error.message: err.statusText);
+          this.toastr.error(err?.error.message ? err.error.message: 'Hubo un error.');
           return of(false)
       }),
       ).subscribe((res: any) => {
         console.log(res);
         if (res){
           console.log(res)
-          alert(res?.message);
+          this.toastr.success(res?.message);
           this.postRequestStatus.set('success')
         } else {
           this.postRequestStatus.set('failure');

@@ -2,6 +2,7 @@
 
 .bottom-navbar {
     position: fixed;
+    z-index: 999;
     bottom: 0;
     left: 0;
     width: 100vw;
@@ -18,9 +19,12 @@
         justify-content: space-around;
         align-items: center;
         
-
+        .nav-item {
+            position: relative;
+        }
+        
        .mat-icon {
-            
+            position: relative;
             fill: $tertiary-color;
             cursor: pointer;
        }
@@ -29,6 +33,39 @@
             fill: $universal-orange;
        }
     }
+}
+
+
+*[data-title] {
+    position: relative;
+}
+
+*[data-title]:hover {
+    cursor: pointer;
+}
+
+span[data-title]::before {
+    content: "";
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    background-color: $tertiary-color;
+    padding: 0.5rem;
+    border-radius: 8px;
+    white-space: nowrap;
+    font-size: 1rem;
+    color: white;
+    z-index: 10;
+    pointer-events: none;
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+span[data-title]:hover::before {
+    content: attr(data-title);
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
 }
 
 

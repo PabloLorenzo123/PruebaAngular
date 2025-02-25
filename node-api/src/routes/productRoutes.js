@@ -8,8 +8,8 @@ const {
   getAllProducts,
 } = require("../controllers/productController");
 
-productsRouter.post("/", createProduct);
+productsRouter.post("/", authenticate, createProduct);
 
-productsRouter.get("/", getAllProducts);
+productsRouter.get("/", authenticate, getAllProducts);
 
 module.exports = productsRouter;

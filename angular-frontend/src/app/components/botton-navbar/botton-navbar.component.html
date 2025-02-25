@@ -1,10 +1,26 @@
 
 <div class="bottom-navbar">
     <div class="nav-items-container">
-        <mat-icon svgIcon="profile-icon" [class.selected]="selectedIcon() == 'profile-icon'" (click)="selectIcon('profile-icon')"></mat-icon>
-        <mat-icon svgIcon="gift-icon" [class.selected]="selectedIcon() == 'gift-icon'" (click)="selectIcon('gift-icon')"></mat-icon>
-        <mat-icon svgIcon="bell-icon" [class.selected]="selectedIcon() == 'bell-icon'" (click)="selectIcon('bell-icon')"></mat-icon>
-        <mat-icon icon svgIcon="chat-icon" [class.selected]="selectedIcon() == 'chat-icon' " (click)="selectIcon('chat-icon')"></mat-icon>
+
+        <span data="nav-item">
+            <span data-title="Perfil">
+                <mat-icon svgIcon="profile-icon" [class.selected]="selectedIcon() == 'profile-icon'" (click)="selectIcon('profile-icon')"></mat-icon>
+            </span>
+        </span>
+        
+        
+        <span data-title="Regalos">
+            <mat-icon svgIcon="gift-icon" [class.selected]="selectedIcon() == 'gift-icon'" (click)="selectIcon('gift-icon')"></mat-icon>
+        </span>
+        
+        <span data-title="Alertas">
+            <mat-icon svgIcon="bell-icon" [class.selected]="selectedIcon() == 'bell-icon'" (click)="selectIcon('bell-icon')"></mat-icon>
+        </span>
+        
+        <span data-title="Chats">
+            <mat-icon icon svgIcon="chat-icon" [class.selected]="selectedIcon() == 'chat-icon' " (click)="selectIcon('chat-icon')"></mat-icon>
+        </span>
+        
     </div>
 </div>
 

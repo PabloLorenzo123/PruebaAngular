@@ -1,11 +1,10 @@
 import { Component, computed, signal } from '@angular/core';
-import { NavbarComponent } from '../navbar/navbar.component';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'top-navigation-bar',
-  imports: [NavbarComponent],
+  imports: [],
   templateUrl: './top-navigation-bar.component.html',
   styleUrl: './top-navigation-bar.component.scss'
 })

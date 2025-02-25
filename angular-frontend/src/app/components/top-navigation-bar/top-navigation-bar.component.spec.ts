@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TopNavigationBarComponent } from './top-navigation-bar/top-navigation-bar.component';
+import { TopNavigationBarComponent } from './top-navigation-bar.component';
 
 describe('TopNavigationBarComponent', () => {
   let component: TopNavigationBarComponent;

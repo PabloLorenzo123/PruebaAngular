@@ -9,6 +9,6 @@ const {
 
 
 // Routes.
-discoverSectionRoutes.get('/', getDiscoverSectionArticles);
+discoverSectionRoutes.get('/', authenticate, getDiscoverSectionArticles);
 
 module.exports = discoverSectionRoutes;

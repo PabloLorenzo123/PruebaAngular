@@ -7,7 +7,7 @@ const getDiscoverSectionArticles = async (req, res) => {
     const articles = [
         {
             id: 1,
-            title: 'Por lo que conducar',
+            title: 'Por lo que suceda',
             url: 'https://www.segurosuniversal.com.do/tu-auto/'
         },
         {

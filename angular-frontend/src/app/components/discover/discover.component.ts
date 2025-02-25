@@ -6,6 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatIconService } from '../../services/mat-icon-service.service';
 
 import { catchError } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'discover-section',
@@ -24,7 +25,7 @@ export class DiscoverComponent implements OnInit{
     'circle-icon': '/icons/circle.svg',
   }
 
-  constructor(private matIconService: MatIconService){
+  constructor(private matIconService: MatIconService, private toast: ToastrService){
     this.matIconService.registerIcons(this.displayOptionsIcons);
     this.selectedDisplayOption.set(Object.keys(this.displayOptionsIcons)[0]);
   }
@@ -41,6 +42,7 @@ export class DiscoverComponent implements OnInit{
     // Fetch the articles for this section.
       this.discoverSectionService.getArticles().pipe(
         catchError((err) => {
+          this.toast.error(err?.error.message ? err.error.message: 'Hubo un error, asegurese que el backend esté corriendo.');
           throw err;
         })
       ).subscribe(res => {

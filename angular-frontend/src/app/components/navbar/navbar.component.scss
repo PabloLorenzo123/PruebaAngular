@@ -27,11 +27,11 @@
 .menu {
     position: fixed;
     top: 0;
+    z-index: 1000;
     
     right: -330px;
     transition: right 1s ease;
 
-    z-index: 999;
     height: 100vh;
     width: 330px;
     background-color: $tertiary-color;
@@ -44,10 +44,13 @@
         align-items: center;
         gap: 2rem;
 
+        user-select: none; // So user cannot select it.
+        
+
         #btnBackMenu{
             width: 28px;
             height: 28px;
-
+         
             border: none;
             padding: 2px 6px;
             display: flex;
@@ -86,6 +89,7 @@
         }
 
         a:hover {
+            cursor: pointer;
             color: #3fcfd5;
         }
     }

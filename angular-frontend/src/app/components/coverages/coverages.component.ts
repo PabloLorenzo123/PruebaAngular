@@ -3,6 +3,7 @@ import { CoveragesService } from '../../services/coverages.service';
 import { Coverage } from '../../model/coverage.type';
 import { catchError, map, of } from 'rxjs';
 import { ProductComponent } from '../product/product.component';
+import { ToastrService } from 'ngx-toastr';
 
 interface CoverageItem extends Coverage {
   available: boolean | undefined;
@@ -15,15 +16,16 @@ interface CoverageItem extends Coverage {
   styleUrl: './coverages.component.scss',
 })
 export class CoveragesComponent implements OnInit {
-  coveragesService = inject(CoveragesService);
   coverages = signal<Array<CoverageItem>>([]);
+
+  constructor(private coveragesService: CoveragesService, private toast: ToastrService){}
 
   ngOnInit(): void {
     this.coveragesService
       .getCoverages()
       .pipe(
         catchError((err) => {
-          console.log(err);
+          this.toast.error(err?.error.message ? err.error.message: 'Hubo un error, asegurese que el backend esté corriendo.');
           throw err;
         }),
       )
