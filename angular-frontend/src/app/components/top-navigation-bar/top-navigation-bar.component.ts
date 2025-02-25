@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 import { NavbarComponent } from '../navbar/navbar.component';
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'top-navigation-bar',
@@ -8,5 +10,16 @@ import { NavbarComponent } from '../navbar/navbar.component';
   styleUrl: './top-navigation-bar.component.scss'
 })
 export class TopNavigationBarComponent {
+  user = computed(() => this.authService.getUser());
 
+  constructor(private authService: AuthService, private router: Router) { }
+
+  getProfileImageUrl() {
+    return `http://localhost:3000/uploads/${this.user()?.profilePic}`
+  }
+
+  handleLogout() {
+    this.authService.logout();
+    this.router.navigate(['/login']);
+  }
 }

@@ -1,8 +1,10 @@
 
 <div class="bottom-navbar">
     <div class="nav-items-container">
-        <span class="material-symbols-outlined">
-            mail
-            </span>
+        <mat-icon svgIcon="profile-icon" [class.selected]="selectedIcon() == 'profile-icon'" (click)="selectIcon('profile-icon')"></mat-icon>
+        <mat-icon svgIcon="gift-icon" [class.selected]="selectedIcon() == 'gift-icon'" (click)="selectIcon('gift-icon')"></mat-icon>
+        <mat-icon svgIcon="bell-icon" [class.selected]="selectedIcon() == 'bell-icon'" (click)="selectIcon('bell-icon')"></mat-icon>
+        <mat-icon icon svgIcon="chat-icon" [class.selected]="selectedIcon() == 'chat-icon' " (click)="selectIcon('chat-icon')"></mat-icon>
     </div>
 </div>
+

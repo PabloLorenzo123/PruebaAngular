@@ -2,6 +2,7 @@
 $primary-color: #fff;
 $secondary-color: #f5f9fc;
 $tertiary-color: #0b2362;
+$universal-orange: #f95d3b;
 
 $fixed-top-icons-width: 50px;
 $bottom-navbar-height: 50px;
@@ -14,6 +15,21 @@ $bottom-navbar-height: 50px;
   box-sizing: border-box;
   font-family: "Lato", "sans-serif";
   color: $tertiary-color;
+}
+
+// Mat icon.
+mat-icon, .material-symbols-outlined, .material-symbols-rounded {
+  color: inherit; // Resets the overridden color
+  font-family: "Material Icons" !important; // Ensures the correct font is used
+  vertical-align: middle;
+}
+
+// This targets custom icons.
+mat-icon[svgIcon] {
+  height: 24px;  /* Set a fixed height */
+  width: 24px;   /* Set a fixed width */
+  line-height: 0;  /* Remove extra space around the icon */
+  vertical-align: middle; /* Center the icon vertically */
 }
 
 a {
@@ -37,5 +53,8 @@ section h1 {
   font-weight: normal;
   margin-bottom: 1rem;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

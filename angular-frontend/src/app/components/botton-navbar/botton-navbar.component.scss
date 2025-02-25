@@ -3,9 +3,38 @@
 .bottom-navbar {
     position: fixed;
     bottom: 0;
+    left: 0;
     width: 100vw;
     height: 50px;
     background-color: #eff6fe;
 
-    .nav-items-container {}
+    display: flex;
+    justify-content: center;
+
+    .nav-items-container {
+        width: 70%;
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        
+
+       .mat-icon {
+            
+            fill: $tertiary-color;
+            cursor: pointer;
+       }
+
+       .mat-icon.selected {
+            fill: $universal-orange;
+       }
+    }
 }
+
+
+@media (max-width: 768px) {
+    .nav-items-container {
+        width: 100% !important;
+    }
+}
+
