@@ -1,16 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'navbar',
-  imports: [],
+  imports: [NgClass],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
-  isMenuOpen: boolean = false;
+  isMenuOpen = signal<boolean>(false);
 
   toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
+    this.isMenuOpen.update(prev => !prev);
   }
 
 }

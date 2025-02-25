@@ -1,6 +1,7 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { DiscoverSectionService } from '../../services/discover-section.service';
 import { discoverArticle } from '../../model/discoverArticle.type';
+
 import { catchError } from 'rxjs';
 
 @Component({

@@ -1,18 +1,25 @@
-<nav class="navbar">
-    <div class="container">
-        <div class="side-bar {{ isMenuOpen ? 'active open-navbar' : '' }}">
-            <!-- Navbar Toggler -->
-            <button class="navbar-toggler {{ isMenuOpen ? 'active' : '' }}" (click)="toggleMenu()">
-                <img class="navbar-toggler__icon"
-                    [src]="isMenuOpen ? 'navbar-toggle-close.svg' : 'navbar-toggle.svg'" />
-            </button>
-
-            <!-- Navbar Items -->
-            <ul class="navbar-menu {{ isMenuOpen ? 'active' : '' }}">
-                <li><a href="#">Primer Link</a></li>
-                <li><a href="#">Segundo Link</a></li>
-                <li><a href="#">Tercer Link</a></li>
-            </ul>
-        </div>
-    </div>
+<nav class="side-navbar">
+  <!-- Navbar Toggler -->
+  <button class="navbar-toggler" (click)="toggleMenu()">
+    <img class="navbar-toggler__icon" src="navbar-toggle.svg" />
+  </button>
 </nav>
+
+<!-- Navbar Items -->
+<div class="menu" [ngClass]="isMenuOpen()? 'slideIn': 'slideOut' ">
+
+  <div class="company-logo">
+    <a href="https://www.segurosuniversal.com.do/"
+      ><img src="/svg/logo-grupo-universal.svg" class="logo" alt="Logo de Grupo Universal"
+    /></a>
+    <button id="btnBackMenu" (click)="toggleMenu()">
+      <img src="/svg/arrow-back.svg" />
+    </button>
+  </div>
+
+  <ul class="navbar-menu">
+    <li><a href="#">Primer Link</a></li>
+    <li><a href="#">Segundo Link</a></li>
+    <li><a href="#">Tercer Link</a></li>
+  </ul>
+</div>

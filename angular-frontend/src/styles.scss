@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 $primary-color: #fff;
 $secondary-color: #f5f9fc;
-$tertiary-color: #022266;
+$tertiary-color: #0b2362;
 
 *,
 *::before,
@@ -9,7 +9,7 @@ $tertiary-color: #022266;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto";
+  font-family: "Lato", "sans-serif";
   color: $tertiary-color;
 }
 
@@ -34,3 +34,5 @@ section h1 {
   font-weight: normal;
   margin-bottom: 1rem;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
