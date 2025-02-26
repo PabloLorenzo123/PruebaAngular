@@ -15,7 +15,7 @@ Desarollé un poco más de lo pedido, haciendo que el contenido de la página es
 ## Fotos de la interfaz.
 
 ### En móvil.
-<img src="/assets/fe_mobile.png" width="200" />
+<img src="/assets/fe_mobile.png" width="400" />
 ![Frontend en móvil](/assets/fe_mobile.png)
 El navbar de abajo en realidad se encuentra posicionado fijamente en la parte baja de la pantalla, Se ve despegado por error de la función de captura de Chrome, lo mismo pasa con la foto de la interfaz suministrada.
 
