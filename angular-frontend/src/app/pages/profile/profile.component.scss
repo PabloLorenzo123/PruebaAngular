@@ -15,10 +15,19 @@
     // border: 1px solid black;
 }
 
+// On mobile.
 @media (min-width: 768px){
     .content {
         height: 100%;
     }
+}
+
+// On bootstrap large breakpoint (when the .content is a column.
+@media (min-width: 992px){
+    .content {
+        height: max(100%, 100vh);
+    }
+    
 }
 
 // When on desktop add more padding to the bottom of content.

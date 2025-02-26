@@ -52,7 +52,7 @@
 // On desktop.
 @media (min-width: 950px){
     .bottom-navbar {
-       
+        background-color: white;
         padding: 2.5px;
         padding-inline: 80px;
         left: 50%; // To center horizontally.
@@ -60,7 +60,7 @@
         bottom: 10px;
         border: 1px solid white;
         border-radius: 50px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
     
         .nav-items-container {
             width: 100%;
@@ -83,6 +83,7 @@
 // On mobile
 @media (max-width: 950px){
     .bottom-navbar {
+        
         width: 100vw;
         padding: 10px 0px;
         bottom: 0;

@@ -155,8 +155,12 @@
 @media (min-width: 992px) {
   // The container should be at the left side, and 100% tall.
   .top-navigation-bar {
-    padding-top: 200px; // To avoid lying on top of the company logo.
-    height: 100vh !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // padding-top: 200px; // To avoid lying on top of the company logo.
+    padding-inline: 20px;
+    height: max(100%, 100vh) !important;
   }
   
   .tabs-container {

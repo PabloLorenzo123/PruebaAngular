@@ -3,6 +3,8 @@
 .product-container:hover {
     scale: 1.025;
 }
+
+
 .product-container {
     transition: scale 0.2s ease;
     
@@ -65,4 +67,18 @@
 
 .status.success {
     background-color: greenyellow !important;
+}
+
+// On desktop
+@media (min-width: 768px){
+    .product-container {
+        height: clamp(80px, 10vh, 150px);
+
+        p {
+            
+            font-size: clamp(1.2rem, 1vw, 2rem);
+           
+        }
+        
+    }
 }
