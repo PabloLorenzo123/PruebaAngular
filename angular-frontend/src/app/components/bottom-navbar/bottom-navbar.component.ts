@@ -6,8 +6,8 @@ import { MatIconModule } from '@angular/material/icon';
   selector: 'botton-navbar',
   standalone: true,
   imports: [MatIconModule],
-  templateUrl: './botton-navbar.component.html',
-  styleUrl: './botton-navbar.component.scss'
+  templateUrl: './bottom-navbar.component.html',
+  styleUrl: './bottom-navbar.component.scss'
 })
 export class BottonNavbarComponent {
 

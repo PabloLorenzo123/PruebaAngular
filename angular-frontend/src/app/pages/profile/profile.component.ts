@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
-import { TopNavigationBarComponent } from '../../components/top-navigation-bar/top-navigation-bar.component';
+import { TopNavigationBarComponent } from '../../components/user-info/user-info.component';
 
-import { CoveragesComponent } from '../../components/coverages/coverages.component';
+import { ProductList } from '../../components/product-list/product-list.component';
 import { DiscoverComponent } from '../../components/discover/discover.component';
-import { BottonNavbarComponent } from '../../components/botton-navbar/botton-navbar.component';
+import { BottonNavbarComponent } from '../../components/bottom-navbar/bottom-navbar.component';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
 
 @Component({
   selector: 'app-profile',
-  imports: [NavbarComponent, TopNavigationBarComponent, CoveragesComponent, DiscoverComponent, BottonNavbarComponent],
+  imports: [NavbarComponent, TopNavigationBarComponent, ProductList, DiscoverComponent, BottonNavbarComponent],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.scss',
   providers: []

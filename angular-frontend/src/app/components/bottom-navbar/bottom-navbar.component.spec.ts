@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CoveragesComponent } from './coverages.component';
+import { BottonNavbarComponent } from './bottom-navbar.component';
 
-describe('CoveragesComponent', () => {
-  let component: CoveragesComponent;
-  let fixture: ComponentFixture<CoveragesComponent>;
+describe('BottonNavbarComponent', () => {
+  let component: BottonNavbarComponent;
+  let fixture: ComponentFixture<BottonNavbarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CoveragesComponent]
+      imports: [BottonNavbarComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CoveragesComponent);
+    fixture = TestBed.createComponent(BottonNavbarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

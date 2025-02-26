@@ -5,8 +5,8 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'top-navigation-bar',
   imports: [],
-  templateUrl: './top-navigation-bar.component.html',
-  styleUrl: './top-navigation-bar.component.scss'
+  templateUrl: './user-info.component.html',
+  styleUrl: './user-info.component.scss'
 })
 export class TopNavigationBarComponent {
   user = computed(() => this.authService.getUser());

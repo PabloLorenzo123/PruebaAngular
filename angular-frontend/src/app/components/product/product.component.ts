@@ -1,14 +1,15 @@
 import { Component, input, inject, Output, signal, computed } from '@angular/core';
 
-import { CoveragesService } from '../../services/coverages.service';
+import { ProductService } from '../../services/product.service';
 
 import {map, pipe, of, catchError} from 'rxjs';
 
 import { NgClass } from '@angular/common';
 
-import { Coverage } from '../../model/coverage.type';
+import { Product } from '../../model/product.type';
 
 import { ToastrService } from 'ngx-toastr';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'product',
@@ -17,7 +18,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrl: './product.component.scss'
 })
 export class ProductComponent {
-  productData = input.required<Coverage>();
+  productData = input.required<Product>();
   postRequestStatus = signal('');
 
   className = computed(() => {
@@ -32,13 +33,18 @@ export class ProductComponent {
     }
   })
 
-  constructor(private coveragesService: CoveragesService, private toastr: ToastrService) {}
+  constructor(
+    private productService: ProductService,
+    private toastr: ToastrService,
+    private auth: AuthService) {}
 
   sendPostRequest(){
     // Makes an api call to the api to create a product. if the request is succesful update
     // the productRequestStatus property according to the request response.
-    this.coveragesService
-      .sendPostRequest('Pablo', this.productData.name)
+    const developerName: string = this.auth.getUsername();
+
+    this.productService
+      .sendPostRequest(developerName, this.productData().name)
       .pipe(
         // map(() => true),
         catchError((err) => {

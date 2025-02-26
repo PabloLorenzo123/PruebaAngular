@@ -1,27 +1,27 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
-import { CoveragesService } from '../../services/coverages.service';
-import { Coverage } from '../../model/coverage.type';
+import { ProductService } from '../../services/product.service';
+import { Product } from '../../model/product.type';
 import { catchError, map, of } from 'rxjs';
 import { ProductComponent } from '../product/product.component';
 import { ToastrService } from 'ngx-toastr';
 
-interface CoverageItem extends Coverage {
+interface CoverageItem extends Product {
   available: boolean | undefined;
 }
 
 @Component({
   selector: 'coverages',
   imports: [ProductComponent],
-  templateUrl: './coverages.component.html',
-  styleUrl: './coverages.component.scss',
+  templateUrl: './product-list.component.html',
+  styleUrl: './product-list.component.scss',
 })
-export class CoveragesComponent implements OnInit {
+export class ProductList implements OnInit {
   coverages = signal<Array<CoverageItem>>([]);
 
-  constructor(private coveragesService: CoveragesService, private toast: ToastrService){}
+  constructor(private productService: ProductService, private toast: ToastrService){}
 
   ngOnInit(): void {
-    this.coveragesService
+    this.productService
       .getCoverages()
       .pipe(
         catchError((err) => {

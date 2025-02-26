@@ -12,7 +12,9 @@ export class AuthService {
   private refreshTokenKey = `refreshToken`;
   user = signal<User | null>(null);
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.fetchUser(); // To assign a value to user.
+  }
 
   signUp(user: User | FormData) {
     return this.http.post<{ user: User, accessToken: string, refreshToken: string }>(`${this.apiUrl}/signup`, user).pipe(
@@ -65,6 +67,10 @@ export class AuthService {
 
   getUser() {
     return this.user();
+  }
+
+  getUsername() : string{
+    return this.user()?.username || 'anonymous'
   }
 
   // Set the user data

@@ -1,5 +1,5 @@
 
-export type Coverage = {
+export type Product = {
     id: number,
     name: string, 
 };
