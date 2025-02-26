@@ -5,12 +5,10 @@ Se desarolló la interfaz suministrada con Angular versión 19.
 - La interfaz es adaptable a diferentes pantallas.
 - Los botones se desactivan, activan si la llamada a POST http://localhost:3000/api/product es sastisfactoria o no.
 
-Además se desarolló una api con expressJs que maneja:
+Además se desarolló una api con Express.js que maneja:
 - Validación y obtención de productos.
-- Autenticación con JWT.
-- Registro de usuario.
 - Obtención de articulos para la sección "Descubre".
-
+- Autenticación con JWT.
 
 Desarollé un poco más de lo pedido, haciendo que el contenido de la página especialmente la sección "Coberturas" y "Descubre" sean obtenidas mediante la api.
 
@@ -104,7 +102,7 @@ Cuando la respuesta no es sastisfactoria, la bolita de estado se vuelve roja y a
 
 - product: Se refiere a cada botón que aparece en la sección "Mis Coberturas".
 - product-list: Representa la sección "Mis Coberturas".
-- user-info: Representa la parte superior de la aplicación (en movil) o parte izquierda (en tableta y en desktop), donde se encuentra la foto de perfil.
+- user-info: Representa la parte superior de la aplicación (en móvil) o parte izquierda (en tableta y en desktop), donde se encuentra la foto de perfil.
 
 ### Servicios en /src/app/services
 - AuthService: Encapsula el proceso de autenticación, este maneja la autenticación de usuarios, guarda los JSON Web Tokens en el local storage del cliente, registra, ingresa usuarios y tiene otros metodos utiles.
@@ -129,7 +127,7 @@ Cuando la respuesta no es sastisfactoria, la bolita de estado se vuelve roja y a
 - Product.
 - User.
 
-## Estructura del backend (expressJs)
+## Estructura del backend (Express.js)
 En este backend se agregó una base de datos SQLITE, este guarda la información de los usuarios. El ORM utilizados es sequelize.
 
 ### Controladores en /src/controllers
