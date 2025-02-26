@@ -19,22 +19,21 @@ Desarollé un poco más de lo pedido, haciendo que el contenido de la página es
   <img src="/assets/fe_mobile.png" alt="Frontend en móvil" width="400"/>
 </p>
 
-![Frontend en móvil](/assets/fe_mobile.png)
 El navbar de abajo en realidad se encuentra posicionado fijamente en la parte baja de la pantalla, Se ve despegado por error de la función de captura de Chrome, lo mismo pasa con la foto de la interfaz suministrada.
 
 ## En tableta
 <p align="center">
-  <img src="/assets/fe_tablet.png" alt="Frontend en tablet" width="400"/>
+  <img src="/assets/fe_tablet.png" alt="Frontend en tablet" width="600"/>
 </p>
 
 ### En desktop.
 <p align="center">
-  <img src="/assets/fe_desktop.png" alt="Frontend en desktop" width="400"/>
+  <img src="/assets/fe_desktop.png" alt="Frontend en desktop" width="600"/>
 </p>
 
 ### Login.
 <p align="center">
-  <img src="/assets/login.png" width="400"/>
+  <img src="/assets/login.png" width="600"/>
 </p>
 
 ## Instalar y correr proyecto.
@@ -75,15 +74,21 @@ Esto iniciará el frontend en `http://localhost:4200/`
 ### Botones en 'Mis Coberturas'.
 Cuando no se ha presionado el botón, este por defecto muestra un estado neutro, demostrado por el color de la bolita a la derecha.
 
-![Funcionalidad 1](/assets/funcionalidad_0.png)
+<p align="center">
+  <img src="/assets/funcionalidad_0.png" width="500">
+</p>
 
 Al hacer click en uno de los productos/botones, se manda un POST request a http://localhost:3000/api/product, si la respuesta es sastisfactoria se presenta una alerta en pantalla y la bolita de estado pasa a ser de color verde.
 
-![Funcionalidad 2](/assets/funcionalidad_1.png)
+<p align="center">
+  <img src="/assets/funcionalidad_1.png" width="500">
+</p>
 
 Este es el payload:
 
-![Funcionalidad 3](/assets/funcionalidad_2.png)
+<p align="center">
+  <img src="/assets/funcionalidad_2.png" width="600">
+</p>
 
 El JWT es agregado en el Authorization header.
 
@@ -91,13 +96,17 @@ El JWT es agregado en el Authorization header.
 
 La respuesta del api es la siguiente:
 
-![Respuesta de la api](/assets/funcionalidad_4.png)
+<p align="center">
+  <img src="/assets/funcionalidad_4.png" width="600">
+</p>
 
 La API verifica que el producto exista, y que el usuario esté autenticado.
 
 Cuando la respuesta no es sastisfactoria, la bolita de estado se vuelve roja y aparece una alerta.
 
-![Respuesta no sastisfactoria](/assets/funcionalidad_5.png)
+<p align="center">
+  <img src="/assets/funcionalidad_5.png" width="500">
+</p>
 
 ## Estructura del frontend /angular-frontend.
 
