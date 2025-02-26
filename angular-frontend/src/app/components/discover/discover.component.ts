@@ -18,6 +18,7 @@ export class DiscoverComponent implements OnInit{
   discoverSectionService = inject(DiscoverSectionService);
   articles = signal<discoverArticle[]>([]);
   selectedDisplayOption = signal<string>('more-icon');
+  makeArticlesBlink = signal<boolean>(false); // Each time a button is clicked, the articles blink.
 
   displayOptionsIcons = {
     'more-icon': '/icons/more.svg',
@@ -32,6 +33,12 @@ export class DiscoverComponent implements OnInit{
 
   selectDisplayOption(icon: string): void {
     this.selectedDisplayOption.set(icon);
+    // This make the blink animation to repeat.
+    this.makeArticlesBlink.set(false);
+    setTimeout(() => {
+      this.makeArticlesBlink.set(true);
+    }, 10); // Small delay ensures DOM updates before animation restarts
+    
   }
 
   getOptionsNames(){

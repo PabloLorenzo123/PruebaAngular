@@ -12,25 +12,23 @@ import { MatIconModule } from '@angular/material/icon';
 export class BottonNavbarComponent {
 
   selectedIcon = signal<string>('');
-
-  icons: { [key: string]: string } = {
-    'profile-icon': 'icons/profile.svg',
-    'gift-icon': 'icons/gift.svg',
-    'bell-icon': 'icons/bell.svg',
-    'chat-icon': 'icons/chat.svg',
-  };
+  navTabs = signal([
+    {title: 'Perfil', icon: 'profile-icon', iconPath: '/icons/profile.svg'},
+    {title: 'Regalos', icon: 'gift-icon', iconPath: '/icons/gift.svg'},
+    {title: 'Notificaciones', icon: 'bell-icon', iconPath: '/icons/bell.svg'},
+    {title: 'Mensajes', icon: 'chat-icon', iconPath: '/icons/chat.svg'}
+  ]);
 
   constructor(private matIconService: MatIconService) {
     // Register the icons using the service
-    this.matIconService.registerIcons(this.icons);
-    this.selectedIcon.set(this.getIconNames()[0]);
+    this.navTabs().forEach(t => {
+      this.matIconService.registerIcon(t.icon, t.iconPath);
+    })
+    this.selectedIcon.set(this.navTabs()[0].title);
   }
 
   selectIcon(icon: string){
     this.selectedIcon.set(icon);
   }
   
-  getIconNames(){
-    return Object.keys(this.icons);
-  }
 }

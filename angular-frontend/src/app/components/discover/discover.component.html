@@ -10,16 +10,13 @@
                     (click)="selectDisplayOption(option)">
                 </mat-icon>
             }
-            
-            
-
         </div>
     </div>
    
 
     <div class="discover-articles-container">
         @for (article of articles(); track article.id){
-            <div class="discover-article shadow-sm">
+            <div class="discover-article shadow-sm" [class.blink-animation]="makeArticlesBlink()">
                 <p>{{article.title}}</p>
                 <a [href]="article.url" target="_blank" class="text-decoration-none">Ver más</a>
             </div>

@@ -1,77 +1,133 @@
 @import "../../../styles.scss";
 
+// The container.
 .bottom-navbar {
     position: fixed;
     z-index: 999;
-    bottom: 0;
     left: 0;
-    width: 100vw;
-    height: 50px;
     background-color: #eff6fe;
-
+    
     display: flex;
     justify-content: center;
+    align-items: center;
 
+    // The container of the nav items.
     .nav-items-container {
-        width: 70%;
-        height: 100%;
         display: flex;
-        justify-content: space-around;
+       
         align-items: center;
         
         .nav-item {
             position: relative;
+            user-select: none;
+            &:hover {
+                cursor: pointer;
+            }
+            mat-icon {
+                height: 30px;
+                position: relative;
+                fill: $tertiary-color;
+                
+                transition: scale 0.5s ease;
+                transition: fill 0.5s ease;
+           }
+           p {
+            transition: color 0.5s ease;
+           }
         }
         
-       .mat-icon {
-            position: relative;
-            fill: $tertiary-color;
-            cursor: pointer;
-       }
-
-       .mat-icon.selected {
-            fill: $universal-orange;
+       .selected {
+            mat-icon {
+                fill: $universal-orange;
+            }
+            p {
+                font-size: 1.05rem;
+                color: $universal-orange;
+            }
        }
     }
 }
 
 
-*[data-title] {
-    position: relative;
+// On desktop.
+@media (min-width: 950px){
+    .bottom-navbar {
+       
+        padding: 2.5px;
+        padding-inline: 80px;
+        left: 50%; // To center horizontally.
+        transform: translateX(-50%); // To center horizontally.
+        bottom: 10px;
+        border: 1px solid white;
+        border-radius: 50px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    
+        .nav-items-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 5rem;
+
+            .selected {
+                mat-icon {
+                    scale: 1.025;
+                }
+            }
+
+          
+        }
+        
+    }
 }
 
-*[data-title]:hover {
-    cursor: pointer;
-}
-
-span[data-title]::before {
-    content: "";
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%) scale(0);
-    background-color: $tertiary-color;
-    padding: 0.5rem;
-    border-radius: 8px;
-    white-space: nowrap;
-    font-size: 1rem;
-    color: white;
-    z-index: 10;
-    pointer-events: none;
-    opacity: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-span[data-title]:hover::before {
-    content: attr(data-title);
-    transform: translateX(-50%) scale(1);
-    opacity: 1;
-}
-
-
-@media (max-width: 768px) {
+// On mobile
+@media (max-width: 950px){
+    .bottom-navbar {
+        width: 100vw;
+        padding: 10px 0px;
+        bottom: 0;
+    }
     .nav-items-container {
         width: 100% !important;
-    }
-}
+        justify-content: space-around;
 
+        .nav-item {
+            p {
+                display: none;
+            }
+        }
+    }
+
+    *[data-title] {
+        position: relative;
+    }
+    
+    *[data-title]:hover {
+        cursor: pointer;
+    }
+    
+    span[data-title]::before {
+        content: "";
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%) scale(0);
+        background-color: $tertiary-color;
+        padding: 0.5rem;
+        border-radius: 8px;
+        white-space: nowrap;
+        font-size: 1rem;
+        color: white;
+        z-index: 10;
+        pointer-events: none;
+        opacity: 0;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    
+    span[data-title]:hover::before {
+        content: attr(data-title);
+        transform: translateX(-50%) scale(1);
+        opacity: 1;
+    }
+    
+}

@@ -2,27 +2,24 @@
 
     <!-- Company Logo -->
     <img id="company-logo" src="universal-logo.png" alt="Grupo Universal Logo" />
-
     <div class="first-row">
         <div class="profile-container">
             <div class="colored-ring"></div>
             <div class="white-ring"></div>
-            <img class="profile-img" src="https://avatars.githubusercontent.com/u/57594779?v=4" alt="User Profile" />
+            <img class="profile-img" [src]="getProfileImageUrl()" alt="User Profile" />
         </div>
-        <p>Hola, Pablo</p>
+        <p>Hola, {{ user()?.username | titlecase }}</p>
     </div>
 
     <div class="tabs-container">
         <div class="tabs">
-            <p>
-                Mis Datos
-            </p>
-            <p>
-                Reclamos
-            </p>
-            <p>
-                Pagos
-            </p>
+            @for (tab of navTabs(); track tab.title){
+                <span class="tab-item">
+                    <mat-icon [svgIcon]="tab.icon"></mat-icon>
+                    <p>{{tab.title | titlecase }}</p>
+                </span>
+
+            }
         </div>
     </div>
     
