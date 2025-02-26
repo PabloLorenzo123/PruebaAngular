@@ -46,7 +46,7 @@ const createProduct = async (req, res) => {
     }
   } catch (err) {
     console.error(err);
-    return res.status(500).send("An error has ocurred.");
+    return res.status(500).send("Ha ocurrido un error.");
   }
 };
 

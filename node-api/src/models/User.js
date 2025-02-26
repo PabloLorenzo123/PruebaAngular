@@ -6,7 +6,7 @@ const User = sequelize.define("User", {
     type: DataTypes.STRING,
     allowNull: false,
     required: true,
-    unique: true,
+    unique: true
   },
   profilePic: {
     type: DataTypes.STRING,

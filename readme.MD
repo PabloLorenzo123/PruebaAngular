@@ -19,10 +19,11 @@ Desarollé un poco más de lo pedido, haciendo que el contenido de la página es
 El navbar de abajo en realidad se encuentra posicionado fijamente en la parte baja de la pantalla, Se ve despegado por error de la función de captura de Chrome, lo mismo pasa con la foto de la interfaz suministrada.
 
 ## En tableta
+<img src="/assets/fe_tablet.png" alt="frontend en tableta" width="200px">
 ![Frontend en tableta](/assets/fe_tablet.png)
 
 ### En desktop.
-![Frontend en desktop](/assets/fe_desktop.png)
+![Frontend en desktop](/assets/fe_desktop.png){ width=200 }
 
 ### Login.
 ![Login](/assets/login.png)

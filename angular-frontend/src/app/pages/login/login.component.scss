@@ -1,3 +1,9 @@
+@import '../../../styles.scss';
+
+* {
+    color: $tertiary-color;
+}
+
 .background-logo {
     padding: 110px 0;
     background: #0b2362 url(https://www.universal.com.do/media/bnzjcd5a/iso-logo-universal-opaco.svg);

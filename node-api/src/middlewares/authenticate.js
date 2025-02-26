@@ -7,7 +7,7 @@ const authenticate = async (req, res, next) => {
   console.log(req.headers.authorization);
 
   if (!token) {
-    return res.status(401).send("Access denied");
+    return res.status(401).send("Acceso denegado.");
   }
 
   // Verify token
@@ -16,7 +16,7 @@ const authenticate = async (req, res, next) => {
     req.user = decoded;
   } catch (err) {
     console.error(err);
-    return res.status(401).send("Access denied");
+    return res.status(401).send("Acceso denegado.");
   }
 
   next();

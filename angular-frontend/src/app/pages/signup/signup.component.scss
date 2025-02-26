@@ -26,6 +26,11 @@
 .signup-form {
     width: 50%;
 }
+@import '../../../styles.scss';
+
+* {
+    color: $tertiary-color;
+}
 
 .signup-form input {
     background: rgba(250, 249, 246, 1.0)

@@ -9,7 +9,7 @@ const signup = async (req, res) => {
 
     // Validate data
     if (!username || !email || !password || !firstName || !lastName) {
-      return res.status(400).send("Please fill all the fields");
+      return res.status(400).send("Por favor llenar todos los campos.");
     }
 
     // Encrypt password
@@ -37,7 +37,7 @@ const signup = async (req, res) => {
     });
   } catch (err) {
     console.error(err);
-    return res.status(500).send("An error has ocurred.");
+    return res.status(500).send("Ha ocurrido un error.");
   }
 };
 
@@ -55,7 +55,7 @@ const login = async (req, res) => {
     // Validate credentials
     const isPasswordValid = await bcrypt.compare(password, user.password);
     if (!isPasswordValid) {
-      return res.status(401).send("Invalid credentials");
+      return res.status(401).send("Credenciales invalidas.");
     }
 
     // Create access token and refresh token
@@ -69,7 +69,7 @@ const login = async (req, res) => {
     });
   } catch (err) {
     console.error(err);
-    return res.status(500).send("An error ocurred.");
+    return res.status(500).send("Ha ocurrido un error.");
   }
 };
 
@@ -79,7 +79,7 @@ const userInfo = async (req, res) => {
     return res.json(user);
   } catch (err) {
     console.error(err);
-    return res.status(500).send("An error ocurred.");
+    return res.status(500).send("Ha ocurrido un error.");
   }
 };
 
