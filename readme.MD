@@ -74,14 +74,21 @@ Al hacer click en uno de los productos/botones, se manda un POST request a http:
 ![Funcionalidad 2](/assets/funcionalidad_1.png)
 
 Este es el payload:
+
 ![Funcionalidad 3](/assets/funcionalidad_2.png)
+
 El JWT es agregado en el Authorization header.
+
 ![Funcionalidad 4](/assets/funcionalidad_3.png)
+
 La respuesta del api es la siguiente:
+
 ![Respuesta de la api](/assets/funcionalidad_4.png)
+
 La API verifica que el producto exista, y que el usuario esté autenticado.
 
 Cuando la respuesta no es sastisfactoria, la bolita de estado se vuelve roja y aparece una alerta.
+
 ![Respuesta no sastisfactoria](/assets/funcionalidad_5.png)
 
 ## Estructura del frontend /angular-frontend.
@@ -90,8 +97,11 @@ Cuando la respuesta no es sastisfactoria, la bolita de estado se vuelve roja y a
 - bottom_navbar: barra de navegación que se encuentra fijo en la parte inferior de la pantalla.
 - discover: Representa la sección "Descubre".
 - navbar: el botón y el menú que se despliega al lado derecho de la pantalla.
+
 ![Botón del navbar](/assets/navbar.png)
+
 ![Menu del navbar](/assets/navbar1.png)
+
 - product: Se refiere a cada botón que aparece en la sección "Mis Coberturas".
 - product-list: Representa la sección "Mis Coberturas".
 - user-info: Representa la parte superior de la aplicación (en movil) o parte izquierda (en tableta y en desktop), donde se encuentra la foto de perfil.
