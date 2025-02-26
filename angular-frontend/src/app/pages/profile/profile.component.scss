@@ -20,3 +20,9 @@
         height: 100%;
     }
 }
+
+// When on desktop add more padding to the bottom of content.
+.content {
+    padding-bottom: calc($bottom-navbar-height + 40px);
+}
+

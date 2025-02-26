@@ -96,10 +96,6 @@ Cuando la respuesta no es sastisfactoria, la bolita de estado se vuelve roja y a
 - discover: Representa la sección "Descubre".
 - navbar: el botón y el menú que se despliega al lado derecho de la pantalla.
 
-![Botón del navbar](/assets/navbar.png)
-
-![Menu del navbar](/assets/navbar1.png)
-
 - product: Se refiere a cada botón que aparece en la sección "Mis Coberturas".
 - product-list: Representa la sección "Mis Coberturas".
 - user-info: Representa la parte superior de la aplicación (en móvil) o parte izquierda (en tableta y en desktop), donde se encuentra la foto de perfil.

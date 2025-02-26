@@ -68,6 +68,8 @@ section h1 {
     font-size: 14px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     margin-top: 20px;
+
+    transition: display 2s ease;
   }
 
   .toast-success {
