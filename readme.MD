@@ -15,18 +15,27 @@ Desarollé un poco más de lo pedido, haciendo que el contenido de la página es
 ## Fotos de la interfaz.
 
 ### En móvil.
-<img src="/assets/fe_mobile.png" width="400" style="display: block; margin="auto; "/>
+<p align="center">
+  <img src="/assets/fe_mobile.png" alt="Frontend en móvil" width="400"/>
+</p>
+
 ![Frontend en móvil](/assets/fe_mobile.png)
 El navbar de abajo en realidad se encuentra posicionado fijamente en la parte baja de la pantalla, Se ve despegado por error de la función de captura de Chrome, lo mismo pasa con la foto de la interfaz suministrada.
 
 ## En tableta
-![Frontend en tableta](/assets/fe_tablet.png)
+<p align="center">
+  <img src="/assets/fe_tablet.png" alt="Frontend en tablet" width="400"/>
+</p>
 
 ### En desktop.
-![Frontend en desktop](/assets/fe_desktop.png)
+<p align="center">
+  <img src="/assets/fe_desktop.png" alt="Frontend en desktop" width="400"/>
+</p>
 
 ### Login.
-![Login](/assets/login.png)
+<p align="center">
+  <img src="/assets/login.png" width="400"/>
+</p>
 
 ## Instalar y correr proyecto.
 
