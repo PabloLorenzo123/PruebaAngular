@@ -64,7 +64,7 @@ Luego
 ```
 cd angular-frontend
 npm install
-ng serve
+npm start
 ```
 
 Esto iniciará el frontend en `http://localhost:4200/`

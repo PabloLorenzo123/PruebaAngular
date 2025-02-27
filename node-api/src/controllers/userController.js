@@ -76,7 +76,9 @@ const login = async (req, res) => {
 const userInfo = async (req, res) => {
   try {
     const user = await User.findByPk(req.user.userId);
-    return res.json(user);
+    // Don't return the password.
+    const {password, ...userWithoutPassword} = user.dataValues;
+    return res.json(userWithoutPassword);
   } catch (err) {
     console.error(err);
     return res.status(500).send("Ha ocurrido un error.");
