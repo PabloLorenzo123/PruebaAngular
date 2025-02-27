@@ -5,6 +5,9 @@ Se desarolló la interfaz suministrada con Angular versión 19.
 - La interfaz es adaptable a diferentes pantallas.
 - Los botones se desactivan, activan si la llamada a POST http://localhost:3000/api/product es sastisfactoria o no.
 
+## Video Demo
+[Demo[(https://youtu.be/oI1ExUqwNk4)
+
 Además se desarolló una api con Express.js que maneja:
 - Validación y obtención de productos.
 - Obtención de articulos para la sección "Descubre".
