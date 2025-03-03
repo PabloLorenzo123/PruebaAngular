@@ -1,6 +1,6 @@
-# <img src="https://angular.io/assets/images/logos/angular/angular.svg" width="50"/> Evaluación Angular - Grupo Universal
+#Evaluación Angular - Grupo Universal
 
-Desarollo de prueba técnica por **Pablo Lorenzo**, implementa la interfaz solicitada en el ejercicio "PruebaAngular" utilizando **Angular 19**.
+<img src="https://angular.io/assets/images/logos/angular/angular.svg" width="50"/>  Desarollo de prueba técnica por **Pablo Lorenzo**, implementa la interfaz solicitada en el ejercicio "PruebaAngular" utilizando **Angular 19**.
 
 ## Características
 - **Fiel al diseño proporcionado.**
