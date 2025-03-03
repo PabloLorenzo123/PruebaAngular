@@ -12,7 +12,7 @@ Antes de continuar con la configuración de la API, asegúrate de completar los 
 3. **Diseño responsive para desktop y tablets**: La interfaz debe ser adaptable a las diferentes pantallas. 
 4. **Funcionalidad de botones y alertas**: Los botones deben desactivarse y activarse dependiendo si el endpoint responde de manera satisfactoria o no.
 
-![Diseño 1](assets/example-1.png)
+![Diseño 1](evaluacion-assets/example-1.png)
 
 3. **Consumo del servicio desde el backend local**: La aplicación frontend debe realizar solicitudes `POST` a la API.
 
@@ -22,7 +22,7 @@ Para los botones en la sección **Mis Coberturas**, al dar clic se debe realizar
 
 **URL:** `http://localhost:3000/api/product`
 
-![Funcionalidad al diseño](assets/example-2.png)
+![Funcionalidad al diseño](evaluacion-assets/example-2.png)
 
 Se envía al API: 
 - Nombre del producto y nombre del desarrollador al presionar los botones.
