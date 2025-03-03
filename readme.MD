@@ -1,4 +1,4 @@
-# <img src="https://angular.io/assets/images/logos/angular/angular.svg" width="20"/> Evaluación Angular - Grupo Universal
+# <img src="https://angular.io/assets/images/logos/angular/angular.svg" width="50"/> Evaluación Angular - Grupo Universal
 
 Desarollo de prueba técnica por **Pablo Lorenzo**, implementa la interfaz solicitada en el ejercicio "PruebaAngular" utilizando **Angular 19**.
 
