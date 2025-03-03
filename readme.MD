@@ -1,4 +1,4 @@
-#Evaluación Angular - Grupo Universal
+# Evaluación Angular - Grupo Universal
 
 Desarollo de prueba técnica por **Pablo Lorenzo**, implementa la interfaz solicitada en el ejercicio "PruebaAngular" utilizando **Angular 19**.
 
